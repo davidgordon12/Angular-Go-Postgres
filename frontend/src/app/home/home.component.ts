@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   template: `
     <p>
       home works!
+      hi hi
     </p>
   `,
   styles: ``
