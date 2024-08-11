@@ -1,27 +1,66 @@
-# Frontend
+# Shadcn Admin Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.
 
-## Development server
+![alt text](public/images/shadcn-admin.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.
 
-## Code scaffolding
+> This is not a starter project (template) though. I'll probably make one in the future.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Light/dark mode
+- Responsive
+- Accessible
+- Sidebar and header layouts
+- 10+ pages
+- Extra custom components
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tech Stack
 
-## Running unit tests
+**UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Build Tool:** [Vite](https://vitejs.dev/)
 
-## Running end-to-end tests
+**Routing:** [React Router](https://reactrouter.com/en/main)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Type Checking:** [TypeScript](https://www.typescriptlang.org/)
 
-## Further help
+**Linting/Formatting:** [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Icons:** [Tabler Icons](https://tabler.io/icons)
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/satnaing/shadcn-admin.git
+```
+
+Go to the project directory
+
+```bash
+  cd shadcn-admin
+```
+
+Install dependencies
+
+```bash
+  pnpm install
+```
+
+Start the server
+
+```bash
+  pnpm run dev
+```
+
+## Author
+
+Crafted with 🤍 by [@satnaing](https://github.com/satnaing)
+
+## License
+
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
