@@ -1,15 +1,16 @@
 package data
 
 import (
-	"database/sql"
 	"log"
 	"os"
-	   _ "github.com/lib/pq" // add this
+
+	"github.com/jmoiron/sqlx"
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq" // add this
 )
 
-func CreateConn() *sql.DB {
-	err := godotenv.Load() 
+func CreateConn() *sqlx.DB {
+	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Couldn't read .env: " + err.Error())
 	}
@@ -17,21 +18,21 @@ func CreateConn() *sql.DB {
 	config := struct {
 		username string
 		password string
-		address string
+		address  string
 		database string
-		table string
+		table    string
 	}{
 		username: os.Getenv("username"),
 		password: os.Getenv("password"),
-		address: os.Getenv("address"),
+		address:  os.Getenv("address"),
 		database: os.Getenv("database"),
-		table : os.Getenv("table"),
+		table:    os.Getenv("table"),
 	}
 
 	connStr := "postgresql://" + config.username + ":" + config.password + "@" + config.address + "/" + config.database + "?sslmode=disable"
 
 	// Connect to database
-	db, err := sql.Open("postgres", connStr)
+	db, err := sqlx.Connect("postgres", connStr)
 	if err != nil {
 		log.Fatal("Couldn't open database: " + err.Error())
 	}

@@ -1,30 +1,26 @@
 package orders
 
 import (
-	"database/sql"
 	"log"
 	"time"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type Orders struct {
-	id int
-	timestamp time.Time
-	price float64
-	category string
+	Id         int
+	Created_on time.Time
+	Price      float64
+	Category   string
 }
 
-func GetAllOrders(ctx *sql.DB) []Orders {
-	var res []Orders
+func GetAllOrders(ctx *sqlx.DB) []Orders {
+	res := []Orders{}
 
-	rows, err := ctx.Query("SELECT * FROM Orders")
+	err := ctx.Select(&res, "SELECT * FROM orders")
+
 	if err != nil {
-		log.Fatal("Couldn't quert database: " + err.Error())
-	}
-
-	for rows.Next() {
-		order := Orders {}
-		rows.Scan(&order)
-		res = append(res, order)
+		log.Fatal("Error querying DB: " + err.Error())
 	}
 
 	return res
