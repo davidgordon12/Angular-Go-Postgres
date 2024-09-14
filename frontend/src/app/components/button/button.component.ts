@@ -5,7 +5,7 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
   selector: 'app-button',
   standalone: true,
   imports: [HlmButtonDirective],
-  template: ` <button hlmBtn>{{ name }}</button> `,
+  templateUrl: './button.component.html',
 })
 export class ButtonComponent {
   @Input()

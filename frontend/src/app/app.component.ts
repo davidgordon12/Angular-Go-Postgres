@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ButtonComponent } from './button/button.component';
+import { ButtonComponent } from './components/button/button.component';
+import { Order, OrderService } from './services/orders.service';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,10 @@ import { ButtonComponent } from './button/button.component';
 })
 export class AppComponent {
   title = 'frontend';
+  url = `http://localhost:8080/ping`
+  orderService = new OrderService(this.url)
+
+  async ngOnInit() {
+    let orders: Order[] = await this.orderService.getOrders()
+  }
 }

@@ -29,3 +29,5 @@ INSERT INTO Orders (id, created_on, price, category) VALUES
     (21, CURRENT_TIMESTAMP, 4.25, 'WASHER'),
     (22, CURRENT_TIMESTAMP, 5.25, 'WASHER')
 ;
+
+GRANT pg_read_all_data TO akali;
